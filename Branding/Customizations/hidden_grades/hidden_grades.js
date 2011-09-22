@@ -8,12 +8,15 @@
 
 jQuery(function($){
   // Are we a teacher in the current URL?
-  var iAmATeacherInThisCourse = $('#menu a .subtitle b:contains("Teacher")').filter(function() {
+  var gradeAccessAllowed = $('#menu a .subtitle b:contains("Teacher")').filter(function() {
     return  window.location.pathname.match($(this).closest('a').attr('href'));
   }).length;
 
+  // If the teacher includes the "Grades" link in the course, allow students access
+  if ($("#section-tabs .grades").length > 0) { gradeAccessAllowed = true; }
+
   // Check for visits to unauthorized URLs
-  if (window.location.pathname.match(/\/grades/) && !iAmATeacherInThisCourse) {
+  if (window.location.pathname.match(/\/grades/) && !gradeAccessAllowed) {
     window.location.replace(window.location.href.replace(/\/grades*/, ''));
   }
 
@@ -39,5 +42,5 @@ jQuery(function($){
   }
 
   // Check if we are a teacher and, if not, call removeGrades.
-  if (!iAmATeacherInThisCourse) removeGrades();
+  if (!gradeAccessAllowed) removeGrades();
 });
