@@ -16,10 +16,12 @@ Both of the following lines do the same thing:
 
   $$ \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right) $$
 
+
 While you do not have to be in the source view to insert a formula, you may
 want to verify that the formula is not enclosed by "&lt;pre&gt;&lt;/pre&gt;" tags.  These tags block
 MathJax from working properly.
 
+An example of a Canvas Course with this working is https://cwt.instructure.com/courses/216663.
 
 Support
 ======
