@@ -30,9 +30,9 @@ endpoint = BASE_URL % 'accounts/%s/sis_imports.json' % (account_id)
 
 # A csv file formatted according to the documentation listed above
 # This should be changed to the name of the file you want to import.
-#sis_file = '/Users/kevin/Documents/sis_demo/csv_delete_all.zip' 
+#sis_file = '/path/to/csv.zip' 
 #sis_file = 'delete_courses.csv' 
-sis_file = '/Users/kevin/Desktop/SIS imports delete/users.csv' 
+sis_file = '/path/to/users.csv' 
 
 
 params = {'attachment':open(sis_file,'rb'),
